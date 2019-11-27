@@ -34,7 +34,11 @@
           <b-row>
             <b-col cols="6">
               <b-form-group label="Social security #">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input
+                  type="text"
+                  required
+                  data-secure-field
+                ></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="6">
@@ -317,7 +321,7 @@
             physical damage to the property of the owner or others may result in
             rejection of the application.
           </p>
-          <b-form-group label="Have you ever ben involved in a lawsuit?">
+          <b-form-group label="Have you ever been involved in a lawsuit?">
             <b-form-select required>
               <option value="null">Please select an option</option>
               <option value="yes">Yes</option>
