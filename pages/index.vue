@@ -29,13 +29,14 @@
             </b-col>
           </b-row>
           <b-form-group label="Full name" description="Last, First and MI">
-            <b-form-input type="text" requireddd></b-form-input>
+            <b-form-input type="text" name="name" requireddd></b-form-input>
           </b-form-group>
           <b-row>
             <b-col cols="6">
               <b-form-group label="Social security #">
                 <b-form-input
                   type="text"
+                  name="social"
                   requireddd
                   data-secure-field
                 ></b-form-input>
