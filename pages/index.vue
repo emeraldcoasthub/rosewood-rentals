@@ -17,40 +17,40 @@
           <b-row>
             <b-col cols="8">
               <b-form-group label="Property applying for">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requireddd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="4">
               <b-form-group label="Rent">
                 <b-input-group prepend="$">
-                  <b-form-input type="text" required></b-form-input>
+                  <b-form-input type="text" requireddd></b-form-input>
                 </b-input-group>
               </b-form-group>
             </b-col>
           </b-row>
           <b-form-group label="Full name" description="Last, First and MI">
-            <b-form-input type="text" required></b-form-input>
+            <b-form-input type="text" requireddd></b-form-input>
           </b-form-group>
           <b-row>
             <b-col cols="6">
               <b-form-group label="Social security #">
                 <b-form-input
                   type="text"
-                  required
+                  requireddd
                   data-secure-field
                 ></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="6">
               <b-form-group label="Birth date">
-                <b-form-input type="date" required></b-form-input>
+                <b-form-input type="date" requireddd></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
           <b-row>
             <b-col cols="4">
               <b-form-group label="Cell phone">
-                <b-form-input type="tel" required></b-form-input>
+                <b-form-input type="tel" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="4">
@@ -70,122 +70,122 @@
           <b-row>
             <b-col cols="8">
               <b-form-group label="Driver's license #">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="4">
               <b-form-group label="State of issue">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
           <b-row>
             <b-col cols="8">
               <b-form-group label="Current address">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="4">
               <b-form-group label="How long?">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
           <b-row>
             <b-col cols="6">
               <b-form-group label="City">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="3">
               <b-form-group label="State">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="3">
               <b-form-group label="Zip code">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
           <b-row>
             <b-col cols="8">
               <b-form-group label="Name of landlord">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="4">
               <b-form-group label="Landlord phone #">
-                <b-form-input type="tel" required></b-form-input>
+                <b-form-input type="tel" requiredd></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
           <b-form-group label="Prior Address">
-            <b-form-input type="text" required></b-form-input>
+            <b-form-input type="text" requiredd></b-form-input>
           </b-form-group>
           <b-row>
             <b-col cols="6">
               <b-form-group label="City">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="3">
               <b-form-group label="State">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="3">
               <b-form-group label="Zip code">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
           <b-row>
             <b-col cols="8">
               <b-form-group label="Name of prior landlord">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="4">
               <b-form-group label="Landlord phone #">
-                <b-form-input type="tel" required></b-form-input>
+                <b-form-input type="tel" requiredd></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
           <b-row>
             <b-col cols="8">
               <b-form-group label="Current employer">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="4">
               <b-form-group label="Position">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
           <b-row>
             <b-col cols="8">
               <b-form-group label="Supervisor name">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="4">
               <b-form-group label="Supervisor phone #">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
           <b-row>
             <b-col cols="4">
               <b-form-group label="How long?">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="4">
               <b-form-group label="Monthly income">
                 <b-input-group prepend="$">
-                  <b-form-input type="text" required></b-form-input>
+                  <b-form-input type="text" requiredd></b-form-input>
                 </b-input-group>
               </b-form-group>
             </b-col>
@@ -198,12 +198,12 @@
           <b-row>
             <b-col cols="8">
               <b-form-group label="Previous employer">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="4">
               <b-form-group label="How long?">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
@@ -211,29 +211,29 @@
           <b-row>
             <b-col cols="6">
               <b-form-group label="# of adults">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="6">
               <b-form-group label="# of children">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
           <b-row>
             <b-col cols="2">
               <b-form-group label="# of pets">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="5">
               <b-form-group label="Breed">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="5">
               <b-form-group label="Weight">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
@@ -244,46 +244,46 @@
             >
           </p>
           <b-form-group label="Name of bank">
-            <b-form-input type="text" required></b-form-input>
+            <b-form-input type="text" requiredd></b-form-input>
           </b-form-group>
           <b-row>
             <b-col cols="8">
               <b-form-group label="Bank address">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="4">
               <b-form-group label="Bank phone #">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
           <b-row>
             <b-col cols="4">
               <b-form-group label="# of vehicles owned">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="4">
               <b-form-group label="Make">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="4">
               <b-form-group label="Model">
-                <b-form-input type="text" required></b-form-input>
+                <b-form-input type="text" requiredd></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
           <b-form-group label="Have you ever filed for bankruptcy?">
-            <b-form-select required>
+            <b-form-select requiredd>
               <option value="null">Please select an option</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </b-form-select>
           </b-form-group>
           <b-form-group label="Have you ever been served an eviction notice?">
-            <b-form-select required>
+            <b-form-select requiredd>
               <option value="null">Please select an option</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -292,7 +292,7 @@
           <b-form-group
             label="Haver you ever willfully or intentionally refused to pay rent?"
           >
-            <b-form-select required>
+            <b-form-select requiredd>
               <option value="null">Please select an option</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -301,7 +301,7 @@
           <b-form-group
             label='Have you ever been convicted of a felony or pled "no contest" to any crime?'
           >
-            <b-form-select required>
+            <b-form-select requiredd>
               <option value="null">Please select an option</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -322,14 +322,14 @@
             rejection of the application.
           </p>
           <b-form-group label="Have you ever been involved in a lawsuit?">
-            <b-form-select required>
+            <b-form-select requiredd>
               <option value="null">Please select an option</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </b-form-select>
           </b-form-group>
           <b-form-group label="Do you smoke?">
-            <b-form-select required>
+            <b-form-select requiredd>
               <option value="null">Please select an option</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -347,7 +347,7 @@
             UNDERSIGNED RECEIVING A LEASE AGREEMENT.
           </p>
           <p>
-            RENTER’S INSURANCE: PROOF OF RENTER’S INSURANCE WILL BE REQUIRED
+            RENTER’S INSURANCE: PROOF OF RENTER’S INSURANCE WILL BE requiredd
             WITHIN FIVE (5) DAYS OF LEASE SIGNING!
           </p>
           <p>
@@ -410,6 +410,7 @@
             REFUND OF MY SECURITY DEPOSIT IN FULL WITHIN 30 DAYS.
           </p>
           SIGNATURE LATER
+          <b-btn type="submit">sign and submit</b-btn>
         </b-form>
       </b-col>
     </b-row>
