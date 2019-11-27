@@ -28,7 +28,7 @@
               </b-form-group>
             </b-col>
           </b-row>
-          <b-form-group label="Full name" description="Last, First and Middle">
+          <b-form-group label="Full name" description="Last, First and MI">
             <b-form-input type="text" required></b-form-input>
           </b-form-group>
           <b-row>
