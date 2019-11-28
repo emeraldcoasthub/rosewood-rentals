@@ -14,6 +14,7 @@
           data-secure
           class="mt-3"
         >
+          <h2>Personal information</h2>
           <b-row>
             <b-col cols="8">
               <b-form-group label="Property applying for">
@@ -109,6 +110,7 @@
               </b-form-group>
             </b-col>
           </b-row>
+          <h2>Rental history</h2>
           <b-row>
             <b-col cols="8">
               <b-form-group label="Current address">
@@ -240,6 +242,7 @@
               </b-form-group>
             </b-col>
           </b-row>
+          <h2>Employment history</h2>
           <b-row>
             <b-col cols="8">
               <b-form-group label="Current employer">
