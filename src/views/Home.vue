@@ -7,8 +7,14 @@
           $50 <strong>non-refundable</strong> fee per person. Each applicant
           must make 3 times the rent.
         </h3>
-        <b-form name="application" method="POST" netlify class="mt-3">
-          <input type="hidden" name="application" value="application" />
+        <b-form
+          name="application"
+          method="POST"
+          netlify
+          class="mt-3"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="application" />
 
           <h2>Personal information</h2>
           <b-row>
