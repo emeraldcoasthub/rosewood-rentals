@@ -2,6 +2,7 @@
   <section class="container">
     <b-row class="mt-5" align-h="center">
       <b-col cols="12" md="8">
+        <p class="text-center"><a href="/">Back to the main site</a></p>
         <h1 class="text-center">Rental Application</h1>
         <h3 class="text-center">
           $50 <strong>non-refundable</strong> fee per person. Each applicant
@@ -11,7 +12,7 @@
           name="application"
           method="POST"
           netlify
-          class="mt-3"
+          class="my-3"
           data-netlify-honeypot="bot-field"
         >
           <input type="hidden" name="form-name" value="application" />
@@ -334,7 +335,7 @@
               </b-form-group>
             </b-col>
           </b-row>
-          <h5>Other occupants:</h5>
+          <h2>Other occupantcy information</h2>
           <b-row>
             <b-col cols="6">
               <b-form-group label="# of adults">
@@ -429,8 +430,8 @@
               <b-form-group label="Have you ever filed for bankruptcy?">
                 <b-form-select name="bankruptcy" required>
                   <option value="null">Please select an option</option>
-                  <option value="true">Yes</option>
-                  <option value="false">No</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
                 </b-form-select>
               </b-form-group>
             </b-col>
@@ -449,8 +450,8 @@
               >
                 <b-form-select name="eviction" required>
                   <option value="null">Please select an option</option>
-                  <option value="true">Yes</option>
-                  <option value="false">No</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
                 </b-form-select>
               </b-form-group>
             </b-col>
@@ -490,8 +491,8 @@
               >
                 <b-form-select required name="felony">
                   <option value="null">Please select an option</option>
-                  <option value="true">Yes</option>
-                  <option value="false">No</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
                 </b-form-select>
               </b-form-group>
             </b-col>
