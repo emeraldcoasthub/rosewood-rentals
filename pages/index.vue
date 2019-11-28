@@ -425,7 +425,7 @@
           <b-row>
             <b-col cols="6">
               <b-form-group label="Have you ever filed for bankruptcy?">
-                <b-form-select v-model="bankruptcy" name="bankruptcy" required>
+                <b-form-select name="bankruptcy" required>
                   <option value="null">Please select an option</option>
                   <option value="true">Yes</option>
                   <option value="false">No</option>
@@ -445,7 +445,7 @@
               <b-form-group
                 label="Have you ever been served an eviction notice?"
               >
-                <b-form-select v-model="eviction" name="eviction" required>
+                <b-form-select name="eviction" required>
                   <option value="null">Please select an option</option>
                   <option value="true">Yes</option>
                   <option value="false">No</option>

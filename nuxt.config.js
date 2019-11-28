@@ -1,7 +1,7 @@
 const pkg = require('./package')
 
 module.exports = {
-  mode: 'universal',
+  mode: 'spa',
 
   /*
    ** Headers of the page
@@ -36,7 +36,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/vue-mask.js'],
+  plugins: [{ src: '~/plugins/vue-mask.js', ssr: false }],
 
   /*
    ** Nuxt.js modules
