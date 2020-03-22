@@ -11,7 +11,8 @@
         <b-form
           name="application"
           method="POST"
-          netlify
+          data-netlify="true"
+          action="/success"
           class="my-3"
           data-netlify-honeypot="bot-field"
         >
