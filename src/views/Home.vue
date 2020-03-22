@@ -2,7 +2,9 @@
   <section class="container">
     <b-row class="mt-5" align-h="center">
       <b-col cols="12" md="8">
-        <p class="text-center"><a href="/">Back to the main site</a></p>
+        <p class="text-center">
+          <a href="https://rosewoodrealtyinc.com">Back to the main site</a>
+        </p>
         <h1 class="text-center">Rental Application</h1>
         <h3 class="text-center">
           $50 <strong>non-refundable</strong> fee per person. Each applicant
