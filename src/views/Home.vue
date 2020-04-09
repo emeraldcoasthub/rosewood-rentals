@@ -6,25 +6,30 @@
           <a href="https://rosewoodrealtyinc.com">Back to the main site</a>
         </p>
         <h1 class="text-center">Rental Application</h1>
-        <h3 class="text-center">
+        <h4 class="text-center">
           $50 <strong>non-refundable</strong> fee per person. Each applicant
           must make 3 times the rent.
-        </h3>
+        </h4>
+        <b-row v-if="submitted" align-h="center" class="mt-3 mb-5">
+          <b-col md="8">
+            <b-alert variant="success" show
+              >Thanks for submitting the rental application. We'll be in touch
+              soon.</b-alert
+            >
+          </b-col>
+        </b-row>
         <b-form
+          v-if="!submitted"
+          @submit.prevent="submitForm"
           name="application"
-          method="POST"
-          data-netlify="true"
-          action="/success"
           class="my-3"
-          data-netlify-honeypot="bot-field"
         >
-          <input type="hidden" name="form-name" value="application" />
-
           <h2>Personal information</h2>
           <b-row>
             <b-col cols="8">
               <b-form-group label="Property applying for">
                 <b-form-input
+                  v-model="property"
                   type="text"
                   name="property_applying_for"
                   required
@@ -34,13 +39,23 @@
             <b-col cols="4">
               <b-form-group label="Rent">
                 <b-input-group prepend="$">
-                  <b-form-input type="text" name="rent" required></b-form-input>
+                  <b-form-input
+                    type="text"
+                    name="rent"
+                    v-model="rent"
+                    required
+                  ></b-form-input>
                 </b-input-group>
               </b-form-group>
             </b-col>
           </b-row>
           <b-form-group label="Full name" description="Last, First and MI">
-            <b-form-input type="text" name="full_name" required></b-form-input>
+            <b-form-input
+              type="text"
+              name="full_name"
+              v-model="fullName"
+              required
+            ></b-form-input>
           </b-form-group>
           <b-row>
             <b-col cols="6">
@@ -59,6 +74,7 @@
                 <b-form-input
                   type="date"
                   name="birthday"
+                  v-model="birthday"
                   required
                 ></b-form-input>
               </b-form-group>
@@ -98,12 +114,21 @@
             </b-col>
           </b-row>
           <b-form-group label="Email">
-            <b-form-input type="email" name="email"></b-form-input>
+            <b-form-input
+              type="email"
+              name="email"
+              v-model="email"
+            ></b-form-input>
           </b-form-group>
           <b-row>
             <b-col cols="8">
               <b-form-group label="Driver's license #">
-                <b-form-input type="text" name="dl_num" required></b-form-input>
+                <b-form-input
+                  type="text"
+                  name="dl_num"
+                  v-model="dl"
+                  required
+                ></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="4">
@@ -111,6 +136,7 @@
                 <b-form-input
                   type="text"
                   name="dl_state"
+                  v-model="dlState"
                   required
                 ></b-form-input>
               </b-form-group>
@@ -123,6 +149,7 @@
                 <b-form-input
                   type="text"
                   name="current_address"
+                  v-model="currentAddress"
                   required
                 ></b-form-input>
               </b-form-group>
@@ -132,6 +159,7 @@
                 <b-form-input
                   type="text"
                   name="lived_at_current_address_for"
+                  v-model="currentAddressLength"
                   required
                 ></b-form-input>
               </b-form-group>
@@ -142,6 +170,7 @@
               <b-form-group label="City">
                 <b-form-input
                   type="text"
+                  v-model="currentAddressCity"
                   name="current_address_city"
                   required
                 ></b-form-input>
@@ -151,6 +180,7 @@
               <b-form-group label="State">
                 <b-form-input
                   type="text"
+                  v-model="currentAddressState"
                   name="current_address_state"
                   required
                 ></b-form-input>
@@ -160,7 +190,7 @@
               <b-form-group label="Zip code">
                 <b-form-input
                   v-mask="'#####'"
-                  v-model="zip"
+                  v-model="currentAddressZip"
                   name="current_address_zip"
                   type="text"
                   required
@@ -173,6 +203,7 @@
               <b-form-group label="Name of landlord">
                 <b-form-input
                   type="text"
+                  v-model="currentAddressLandlordName"
                   name="current_landlord"
                   required
                 ></b-form-input>
@@ -182,7 +213,7 @@
               <b-form-group label="Landlord phone #">
                 <b-form-input
                   v-mask="'(###) ###-####'"
-                  v-model="currentLandlordPhone"
+                  v-model="currentAddressLandlordPhone"
                   type="tel"
                   name="current_landlord_phone"
                   required
@@ -193,6 +224,7 @@
           <b-form-group label="Prior Address">
             <b-form-input
               type="text"
+              v-model="priorAddress"
               name="previous_address"
               required
             ></b-form-input>
@@ -202,6 +234,7 @@
               <b-form-group label="City">
                 <b-form-input
                   type="text"
+                  v-model="priorCity"
                   name="previous_city"
                   required
                 ></b-form-input>
@@ -211,6 +244,7 @@
               <b-form-group label="State">
                 <b-form-input
                   type="text"
+                  v-model="priorState"
                   name="previous_state"
                   required
                 ></b-form-input>
@@ -220,6 +254,7 @@
               <b-form-group label="Zip code">
                 <b-form-input
                   type="text"
+                  v-model="priorZip"
                   name="previous_zip"
                   required
                 ></b-form-input>
@@ -231,6 +266,7 @@
               <b-form-group label="Name of prior landlord">
                 <b-form-input
                   type="text"
+                  v-model="priorLandlordName"
                   name="previous_landlord"
                   required
                 ></b-form-input>
@@ -240,7 +276,7 @@
               <b-form-group label="Landlord phone #">
                 <b-form-input
                   v-mask="'(###) ###-####'"
-                  v-model="previousLandlordPhone"
+                  v-model="priorLandlordPhone"
                   type="tel"
                   name="previous_landlord_phone"
                   required
@@ -254,6 +290,7 @@
               <b-form-group label="Current employer">
                 <b-form-input
                   type="text"
+                  v-model="currentEmployer"
                   name="current_employer"
                   required
                 ></b-form-input>
@@ -263,6 +300,7 @@
               <b-form-group label="Position">
                 <b-form-input
                   type="text"
+                  v-model="currentPosition"
                   name="current_position"
                   required
                 ></b-form-input>
@@ -274,6 +312,7 @@
               <b-form-group label="Supervisor name">
                 <b-form-input
                   type="text"
+                  v-model="currentSupervisorName"
                   name="current_supervisor_name"
                   required
                 ></b-form-input>
@@ -283,7 +322,7 @@
               <b-form-group label="Supervisor phone #">
                 <b-form-input
                   v-mask="'(###) ###-####'"
-                  v-model="supervisorPhone"
+                  v-model="currentSupervisorPhone"
                   name="current_supervisor_name"
                   type="text"
                   required
@@ -296,6 +335,7 @@
               <b-form-group label="How long?">
                 <b-form-input
                   type="text"
+                  v-model="currentJobLength"
                   name="current_job_length"
                   required
                 ></b-form-input>
@@ -306,6 +346,7 @@
                 <b-input-group prepend="$">
                   <b-form-input
                     type="text"
+                    v-model="currentMonthlyIncome"
                     name="current_job_monthly_income"
                     required
                   ></b-form-input>
@@ -314,7 +355,11 @@
             </b-col>
             <b-col cols="4">
               <b-form-group label="If military, provide rank">
-                <b-form-input type="text" name="military_rank"></b-form-input>
+                <b-form-input
+                  type="text"
+                  name="military_rank"
+                  v-model="militaryRank"
+                ></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
@@ -324,6 +369,7 @@
                 <b-form-input
                   type="text"
                   name="previous_employer"
+                  v-model="previousEmployer"
                   required
                 ></b-form-input>
               </b-form-group>
@@ -332,17 +378,23 @@
               <b-form-group label="How long?">
                 <b-form-input
                   type="text"
+                  v-model="previousEmployerLength"
                   name="previous_employer_length"
                   required
                 ></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
-          <h2>Other occupantcy information</h2>
+          <h2>Other occupancy information</h2>
           <b-row>
             <b-col cols="6">
               <b-form-group label="# of adults">
-                <b-form-input type="text" name="adults" required></b-form-input>
+                <b-form-input
+                  type="text"
+                  name="adults"
+                  required
+                  v-model="adults"
+                ></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="6">
@@ -350,6 +402,7 @@
                 <b-form-input
                   type="text"
                   name="children"
+                  v-model="children"
                   required
                 ></b-form-input>
               </b-form-group>
@@ -358,12 +411,22 @@
           <b-row>
             <b-col cols="2">
               <b-form-group label="# of pets">
-                <b-form-input type="text" name="pets" required></b-form-input>
+                <b-form-input
+                  type="text"
+                  name="pets"
+                  required
+                  v-model="pets"
+                ></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="5">
               <b-form-group label="Breed">
-                <b-form-input type="text" name="breed" required></b-form-input>
+                <b-form-input
+                  type="text"
+                  name="breed"
+                  required
+                  v-model="breed"
+                ></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="5">
@@ -371,6 +434,7 @@
                 <b-form-input
                   type="text"
                   name="weight_of_pets"
+                  v-model="petWeight"
                   required
                 ></b-form-input>
               </b-form-group>
@@ -383,13 +447,19 @@
             >
           </p>
           <b-form-group label="Name of bank">
-            <b-form-input type="text" name="bank_name" required></b-form-input>
+            <b-form-input
+              type="text"
+              name="bank_name"
+              v-model="bankName"
+              required
+            ></b-form-input>
           </b-form-group>
           <b-row>
             <b-col cols="8">
               <b-form-group label="Bank address">
                 <b-form-input
                   type="text"
+                  v-model="bankAddress"
                   name="bank_address"
                   required
                 ></b-form-input>
@@ -412,6 +482,7 @@
               <b-form-group label="# of vehicles owned">
                 <b-form-input
                   type="text"
+                  v-model="numberVehicles"
                   name="vehicles"
                   required
                 ></b-form-input>
@@ -419,19 +490,29 @@
             </b-col>
             <b-col cols="4">
               <b-form-group label="Make">
-                <b-form-input type="text" name="make" required></b-form-input>
+                <b-form-input
+                  type="text"
+                  name="make"
+                  required
+                  v-model="vehicleMake"
+                ></b-form-input>
               </b-form-group>
             </b-col>
             <b-col cols="4">
               <b-form-group label="Model">
-                <b-form-input type="text" name="model" required></b-form-input>
+                <b-form-input
+                  type="text"
+                  name="model"
+                  required
+                  v-model="vehicleModel"
+                ></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
           <b-row>
             <b-col cols="6">
               <b-form-group label="Have you ever filed for bankruptcy?">
-                <b-form-select name="bankruptcy" required>
+                <b-form-select name="bankruptcy" v-model="bankruptcy" required>
                   <option value="null">Please select an option</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
@@ -442,7 +523,11 @@
               <b-form-group
                 label="If yes, what date did you file for bankruptcy?"
               >
-                <b-form-input type="date" name="bankruptcy_date"></b-form-input>
+                <b-form-input
+                  type="date"
+                  name="bankruptcy_date"
+                  v-model="bankruptcyDate"
+                ></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
@@ -451,7 +536,7 @@
               <b-form-group
                 label="Have you ever been served an eviction notice?"
               >
-                <b-form-select name="eviction" required>
+                <b-form-select name="eviction" v-model="eviction" required>
                   <option value="null">Please select an option</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
@@ -462,14 +547,22 @@
               <b-form-group
                 label="If yes, what date were you served the eviction notice?"
               >
-                <b-form-input type="date" name="eviction_date"></b-form-input>
+                <b-form-input
+                  type="date"
+                  name="eviction_date"
+                  v-model="evictionDate"
+                ></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
           <b-form-group
             label="Haver you ever willfully or intentionally refused to pay rent?"
           >
-            <b-form-select required name="refused_to_pay_rent">
+            <b-form-select
+              required
+              name="refused_to_pay_rent"
+              v-model="rentRefusal"
+            >
               <option value="null">Please select an option</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -492,7 +585,7 @@
                 physical damage to the property of the owner or others may result in
                 rejection of the application."
               >
-                <b-form-select required name="felony">
+                <b-form-select required name="felony" v-model="felony">
                   <option value="null">Please select an option</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
@@ -503,19 +596,27 @@
               <b-form-group
                 label='If yes, what date were convicted or did you plead "no contest"'
               >
-                <b-form-input type="date" name="felony_date"></b-form-input>
+                <b-form-input
+                  type="date"
+                  name="felony_date"
+                  v-model="felonyDate"
+                ></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
           <b-form-group label="Have you ever been involved in a lawsuit?">
-            <b-form-select name="involved_in_lawsuit" required>
+            <b-form-select
+              name="involved_in_lawsuit"
+              v-model="involvedInLawsuit"
+              required
+            >
               <option value="null">Please select an option</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </b-form-select>
           </b-form-group>
           <b-form-group label="Do you smoke?">
-            <b-form-select name="smoke" required>
+            <b-form-select name="smoke" required v-model="smoke">
               <option value="null">Please select an option</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -600,7 +701,12 @@
             label="Your signature"
             description="By signing you agree to all of the conditions as written. You also agree that this signature will be legally binding as allowed by the ESIGN act."
           >
-            <b-form-input type="text" name="signature" required></b-form-input>
+            <b-form-input
+              type="text"
+              name="signature"
+              v-model="signature"
+              required
+            ></b-form-input>
           </b-form-group>
           <p>
             Effective October 1, 2000, The Electronic Signatures in Global and
@@ -621,19 +727,193 @@
 </template>
 
 <script>
+import axios from 'axios'
+const api =
+  'https://admin.rosewoodrealtyinc.com/api/forms/submit/application?token=8db45ba39169539ac6bce2631ffea2'
+
 export default {
   components: {},
   data() {
     return {
+      submitted: false,
+      property: '',
+      rent: '',
+      fullName: '',
       social: '',
+      birthday: '',
       cell: '',
       home: '',
       work: '',
-      zip: '',
-      currentLandlordPhone: '',
-      previousLandlordPhone: '',
-      supervisorPhone: '',
-      bankPhone: ''
+      email: '',
+      dl: '',
+      dlState: '',
+      currentAddress: '',
+      currentAddressLength: '',
+      currentAddressCity: '',
+      currentAddressState: '',
+      currentAddressZip: '',
+      currentAddressLandlordName: '',
+      currentAddressLandlordPhone: '',
+      priorAddress: '',
+      priorCity: '',
+      priorState: '',
+      priorZip: '',
+      priorLandlordName: '',
+      priorLandlordPhone: '',
+      currentEmployer: '',
+      currentPosition: '',
+      currentSupervisorName: '',
+      currentSupervisorPhone: '',
+      currentJobLength: '',
+      currentMonthlyIncome: '',
+      militaryRank: '',
+      previousEmployer: '',
+      previousEmployerLength: '',
+      adults: '',
+      children: '',
+      pets: '',
+      breed: '',
+      petWeight: '',
+      bankName: '',
+      bankAddress: '',
+      bankPhone: '',
+      numberVehicles: '',
+      vehicleMake: '',
+      vehicleModel: '',
+      bankruptcy: '',
+      bankruptcyDate: '',
+      eviction: '',
+      evictionDate: '',
+      rentRefusal: '',
+      felony: '',
+      felonyDate: '',
+      involvedInLawsuit: '',
+      smoke: '',
+      signature: ''
+    }
+  },
+  methods: {
+    submitForm() {
+      const submissionObject = {
+        form: {
+          'Property applying for': this.property,
+          'Rent amount': this.rent,
+          'Full name': this.fullName,
+          'Social security #': this.social,
+          'Date of birth': this.birthday,
+          Cell: this.cell,
+          Home: this.home,
+          Work: this.work,
+          Email: this.email,
+          "Driver's License #": this.dl,
+          State: this.dlState,
+          'Current Address': this.currentAddress,
+          'Current Address Length': this.currentAddressLength,
+          'Current Address City': this.currentAddressCity,
+          'Current Address State': this.currentAddressState,
+          'Current Address Zip': this.currentAddressZip,
+          'Current Address Landlord Name': this.currentAddressLandlordName,
+          'Current Address Landlord Phone': this.currentAddressLandlordPhone,
+          'Prior Address': this.currentAddress,
+          'Prior City': this.priorCity,
+          'Prior State': this.priorState,
+          'Prior Zip': this.priorZip,
+          'Prior Landlord Name': this.priorLandlordName,
+          'Prior Landlord Phone': this.priorLandlordPhone,
+          'Current Employer': this.currentEmployer,
+          'Current Position': this.currentPosition,
+          'Military Rank': this.militaryRank,
+          'Supervisor Name': this.currentSupervisorName,
+          'Supervisor Phone': this.currentSupervisorPhone,
+          'Employment Length': this.currentJobLength,
+          'Monthly Income': this.currentMonthlyIncome,
+          'Previous Employer': this.previousEmployer,
+          'Previous Employment Length': this.previousEmployerLength,
+          '# of Adults': this.adults,
+          '# of Children': this.children,
+          '# of Pets': this.pets,
+          Breeds: this.breed,
+          'Pet Weight': this.petWeight,
+          'Name of Bank': this.bankName,
+          'Bank Address': this.bankAddress,
+          'Bank Tel #': this.bankPhone,
+          'Vehicles Owned': this.numberVehicles,
+          Make: this.vehicleMake,
+          Model: this.vehicleModel,
+          'Have they filed for bankrupty?': this.bankruptcy,
+          'Bankrupty file date': this.bankruptcyDate,
+          'Ever been served eviction notice': this.eviction,
+          'Eviction notice date': this.evictionDate,
+          'Willfully refused to pay rent': this.rentRefusal,
+          'Convicted of a felony': this.felony,
+          'Date of conviction': this.felonyDate,
+          'Been involved in lawsuit': this.involvedInLawsuit,
+          Smoke: this.smoke,
+          Signature: this.signature
+        }
+      }
+      axios
+        .post(api, submissionObject)
+        .then(() => {
+          this.property = ''
+          this.rent = ''
+          this.fullName = ''
+          this.social = ''
+          this.birthday = ''
+          this.cell = ''
+          this.home = ''
+          this.work = ''
+          this.email = ''
+          this.dl = ''
+          this.dlState = ''
+          this.currentAddress = ''
+          this.currentAddressLength = ''
+          this.currentAddressCity = ''
+          this.currentAddressState = ''
+          this.currentAddressZip = ''
+          this.currentAddressLandlordName = ''
+          this.currentAddressLandlordPhone = ''
+          this.priorAddress = ''
+          this.priorCity = ''
+          this.priorState = ''
+          this.priorZip = ''
+          this.priorLandlordName = ''
+          this.priorLandlordPhone = ''
+          this.currentEmployer = ''
+          this.currentPosition = ''
+          this.currentSupervisorName = ''
+          this.currentSupervisorPhone = ''
+          this.currentJobLength = ''
+          this.currentMonthlyIncome = ''
+          this.militaryRank = ''
+          this.previousEmployer = ''
+          this.previousEmployerLength = ''
+          this.adults = ''
+          this.children = ''
+          this.pets = ''
+          this.breed = ''
+          this.petWeight = ''
+          this.bankName = ''
+          this.bankAddress = ''
+          this.bankPhone = ''
+          this.numberVehicles = ''
+          this.vehicleMake = ''
+          this.vehicleModel = ''
+          this.bankruptcy = ''
+          this.bankruptcyDate = ''
+          this.eviction = ''
+          this.evictionDate = ''
+          this.rentRefusal = ''
+          this.felony = ''
+          this.felonyDate = ''
+          this.involvedInLawsuit = ''
+          this.smoke = ''
+          this.signature = ''
+          this.submitted = true
+        })
+        .catch(err => {
+          throw new Error(err)
+        })
     }
   }
 }
