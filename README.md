@@ -1,4 +1,4 @@
-# sandro-falduto-contracts
+# rosewood-rentals
 
 ## Project setup
 ```
