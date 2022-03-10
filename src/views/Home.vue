@@ -20,7 +20,8 @@
         </b-row>
         <b-form
           v-if="!submitted"
-          @submit.prevent="submitForm"
+          action="https://formsubmit.co/rentals@rosewoodrealtyinc.com"
+          method="POST"
           name="application"
           class="my-3"
         >
@@ -727,9 +728,6 @@
 </template>
 
 <script>
-import axios from 'axios'
-const api =
-  'https://admin.rosewoodrealtyinc.com/api/forms/submit/application?token=8db45ba39169539ac6bce2631ffea2'
 
 export default {
   components: {},
@@ -790,130 +788,6 @@ export default {
       involvedInLawsuit: '',
       smoke: '',
       signature: ''
-    }
-  },
-  methods: {
-    submitForm() {
-      const submissionObject = {
-        form: {
-          'Property applying for': this.property,
-          'Rent amount': this.rent,
-          'Full name': this.fullName,
-          'Social security #': this.social,
-          'Date of birth': this.birthday,
-          Cell: this.cell,
-          Home: this.home,
-          Work: this.work,
-          Email: this.email,
-          "Driver's License #": this.dl,
-          State: this.dlState,
-          'Current Address': this.currentAddress,
-          'Current Address Length': this.currentAddressLength,
-          'Current Address City': this.currentAddressCity,
-          'Current Address State': this.currentAddressState,
-          'Current Address Zip': this.currentAddressZip,
-          'Current Address Landlord Name': this.currentAddressLandlordName,
-          'Current Address Landlord Phone': this.currentAddressLandlordPhone,
-          'Prior Address': this.currentAddress,
-          'Prior City': this.priorCity,
-          'Prior State': this.priorState,
-          'Prior Zip': this.priorZip,
-          'Prior Landlord Name': this.priorLandlordName,
-          'Prior Landlord Phone': this.priorLandlordPhone,
-          'Current Employer': this.currentEmployer,
-          'Current Position': this.currentPosition,
-          'Military Rank': this.militaryRank,
-          'Supervisor Name': this.currentSupervisorName,
-          'Supervisor Phone': this.currentSupervisorPhone,
-          'Employment Length': this.currentJobLength,
-          'Monthly Income': this.currentMonthlyIncome,
-          'Previous Employer': this.previousEmployer,
-          'Previous Employment Length': this.previousEmployerLength,
-          '# of Adults': this.adults,
-          '# of Children': this.children,
-          '# of Pets': this.pets,
-          Breeds: this.breed,
-          'Pet Weight': this.petWeight,
-          'Name of Bank': this.bankName,
-          'Bank Address': this.bankAddress,
-          'Bank Tel #': this.bankPhone,
-          'Vehicles Owned': this.numberVehicles,
-          Make: this.vehicleMake,
-          Model: this.vehicleModel,
-          'Have they filed for bankrupty?': this.bankruptcy,
-          'Bankrupty file date': this.bankruptcyDate,
-          'Ever been served eviction notice': this.eviction,
-          'Eviction notice date': this.evictionDate,
-          'Willfully refused to pay rent': this.rentRefusal,
-          'Convicted of a felony': this.felony,
-          'Date of conviction': this.felonyDate,
-          'Been involved in lawsuit': this.involvedInLawsuit,
-          Smoke: this.smoke,
-          Signature: this.signature
-        }
-      }
-      axios
-        .post(api, submissionObject)
-        .then(() => {
-          this.property = ''
-          this.rent = ''
-          this.fullName = ''
-          this.social = ''
-          this.birthday = ''
-          this.cell = ''
-          this.home = ''
-          this.work = ''
-          this.email = ''
-          this.dl = ''
-          this.dlState = ''
-          this.currentAddress = ''
-          this.currentAddressLength = ''
-          this.currentAddressCity = ''
-          this.currentAddressState = ''
-          this.currentAddressZip = ''
-          this.currentAddressLandlordName = ''
-          this.currentAddressLandlordPhone = ''
-          this.priorAddress = ''
-          this.priorCity = ''
-          this.priorState = ''
-          this.priorZip = ''
-          this.priorLandlordName = ''
-          this.priorLandlordPhone = ''
-          this.currentEmployer = ''
-          this.currentPosition = ''
-          this.currentSupervisorName = ''
-          this.currentSupervisorPhone = ''
-          this.currentJobLength = ''
-          this.currentMonthlyIncome = ''
-          this.militaryRank = ''
-          this.previousEmployer = ''
-          this.previousEmployerLength = ''
-          this.adults = ''
-          this.children = ''
-          this.pets = ''
-          this.breed = ''
-          this.petWeight = ''
-          this.bankName = ''
-          this.bankAddress = ''
-          this.bankPhone = ''
-          this.numberVehicles = ''
-          this.vehicleMake = ''
-          this.vehicleModel = ''
-          this.bankruptcy = ''
-          this.bankruptcyDate = ''
-          this.eviction = ''
-          this.evictionDate = ''
-          this.rentRefusal = ''
-          this.felony = ''
-          this.felonyDate = ''
-          this.involvedInLawsuit = ''
-          this.smoke = ''
-          this.signature = ''
-          this.submitted = true
-        })
-        .catch(err => {
-          throw new Error(err)
-        })
     }
   }
 }
