@@ -7,7 +7,7 @@
         </p>
         <h1 class="text-center">Rental Application</h1>
         <h4 class="text-center">
-          $50 <strong>non-refundable</strong> fee per person. Each applicant
+          $60 <strong>non-refundable</strong> fee per person. Each applicant
           must make 3 times the rent.
         </h4>
         <b-row v-if="submitted" align-h="center" class="mt-3 mb-5">
