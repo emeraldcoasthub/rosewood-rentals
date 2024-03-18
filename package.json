@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.28.0",
-    "bootstrap-vue": "^2.0.0-rc.28",
+    "bootstrap-vue": "^2.23.1",
     "core-js": "^2.6.5",
     "date-fns": "^2.0.0",
     "pdfkit": "^0.10.0",
