@@ -5532,7 +5532,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.3.0, lodash@~4.17.10:
+lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.21, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.3.0, lodash@~4.17.10:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -9046,10 +9046,12 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-vue-cli-plugin-bootstrap-vue@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/vue-cli-plugin-bootstrap-vue/-/vue-cli-plugin-bootstrap-vue-0.4.0.tgz#08b948adb712209b7e076f573128ea1e9f9892fc"
-  integrity sha512-L/AFeUBDJhCbBFSKJytERTCV3m+Z+SxgnEYZayA3GNfweMQDw2eJbtcgw4+4aU348seH4+8fU4lrMOLkKlw8hw==
+vue-cli-plugin-bootstrap-vue@^0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-bootstrap-vue/-/vue-cli-plugin-bootstrap-vue-0.8.2.tgz#a2e8d132ef3a8e911377862ce7cfaae8b39d43e3"
+  integrity sha512-PnWIioKYvfV45qsaZarBdrOSZCbKp8sisGp6KfBvTfSl2htHh7Ig7A40Lqqk3WadsSheZWF2fVvo9Dyz29G3vw==
+  dependencies:
+    lodash "^4.17.21"
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
